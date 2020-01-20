@@ -1,5 +1,5 @@
 ## v-if和v-for哪个优先级高？如果两个同时出现，应该怎么优化得到更好的性能？
-- v-for的优先级要高与v-if;
+- v-for的优先级要高于v-if;
 - 优化:
 
     `<div v-if="false" v-for="item of list">{{item}}</div>`
