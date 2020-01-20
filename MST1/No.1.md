@@ -5,7 +5,7 @@
     `<div v-if="false" v-for="item of list">{{item}}</div>`
 
     `<div v-if="item%2" v-for="item of 10">{{item}}</div>`
-    1. 如果v-if是要将整个列表隐藏的情况
+    1. 如果v-if是要将整个列表隐藏的情况 
         - 可以在列表外套一个template或套一个盒子,然后在外层盒子进行v-if判断
     ```
         <template v-if="false">
