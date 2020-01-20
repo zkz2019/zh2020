@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span>{{hello}}</span>
+        <!-- 1 -->
+        <div>
+            <div v-if="false" :key="item" v-for="item of list">{{item}}</div>
+        </div>
+        <!-- 2 -->
+        <div>
+            <div v-if="item%2" :key="item" v-for="item of list" :style="{color:'red'}">{{item}}</div>
+        </div>
+        <!-- 优化1 -->
+        <div v-if="true">
+            <div :key="item" v-for="item of list">{{item}}</div>
+        </div>
+        <!-- 优化2 -->
+        <div>
+            <div :key="item" v-for="item of filterList" :style="{color:'blue'}">{{item}}</div>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{hello:"Hello vue !",list:[1,2,3,4,5]},
+        computed:{
+            filterList(){
+                return this.list.filter(item=>{
+                    if(item%2){
+                        return item;
+                    }
+                })
+            }
+        }
+    })
+</script>
+</html>
