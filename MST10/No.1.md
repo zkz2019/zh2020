@@ -1,7 +1,7 @@
 ## 你了解哪些vue性能优化方法？
 - 显示隐藏不频繁时尽量用v-if
 - 模板里面尽量少写表达式,可以写在methods或computed
-- v-for是要写key
+- v-for时要写key
 - methods中尽量封装简短可复用的方法
 - 减少watch的数据
 - 小图片转为base64
